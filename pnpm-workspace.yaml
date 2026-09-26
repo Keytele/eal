@@ -1,0 +1,13 @@
+packages:
+  - apps/*
+  - packages/*
+
+overrides:
+  postcss: 8.5.28
+
+# Vitest uses esbuild for test transforms. This is the only dependency build
+# script intentionally permitted by the foundation scaffold.
+onlyBuiltDependencies:
+  - esbuild
+allowBuilds:
+  esbuild: true

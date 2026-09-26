@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "metrics": {
+    "lcpMs": 2500,
+    "inpMs": 200,
+    "cls": 0.1,
+    "javascriptKb": 240,
+    "imageKb": 500,
+    "thirdPartyRequests": 0
+  },
+  "motion": {
+    "heroRevealMaxMs": 1800,
+    "sectionRevealDistancePx": 24,
+    "maxActiveObserversPerRoute": 3
+  },
+  "routes": [
+    "/en/au",
+    "/en/au/vehicles",
+    "/en/au/vehicles/s6",
+    "/en/au/technology",
+    "/en/au/news",
+    "/en/au/search"
+  ]
+}

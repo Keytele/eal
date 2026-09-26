@@ -1,0 +1,21 @@
+# Dependencies and package-manager state
+node_modules/
+.pnpm-store/
+
+# Framework and test output
+.next/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db

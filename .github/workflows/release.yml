@@ -1,0 +1,49 @@
+name: Release evidence
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Environment to prepare
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+      artifact:
+        description: Commit or tag to validate
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: release-${{ inputs.target }}
+  cancel-in-progress: false
+
+jobs:
+  evidence:
+    name: Prepare ${{ inputs.target }} evidence
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.target }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.artifact }}
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.5.2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm check:performance
+      - run: pnpm check
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+      - run: pnpm test:a11y
+      - name: Publish/deploy
+        run: echo "Deployment is intentionally owned by the configured platform adapter; attach this evidence to the approved promotion record."

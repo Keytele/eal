@@ -1,0 +1,85 @@
+.frame {
+  background: var(--eal-bg-850);
+  border: 1px solid var(--eal-line);
+  margin: 0;
+  min-height: 18rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  bottom: 0;
+  display: block;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.caption {
+  background: rgba(6, 16, 26, 0.86);
+  bottom: 0;
+  color: var(--eal-text-muted);
+  font-size: 0.72rem;
+  left: 0;
+  padding: 0.8rem 1rem;
+  position: absolute;
+  right: 0;
+}
+
+.viewer {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.viewerSurface {
+  background: transparent;
+  border: 0;
+  cursor: grab;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+  touch-action: pan-y;
+}
+
+.viewerSurface:active {
+  cursor: grabbing;
+}
+
+.viewerSurface:focus-visible {
+  outline: 2px solid var(--eal-text);
+  outline-offset: 3px;
+}
+
+.viewerControls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.viewerControls button {
+  background: transparent;
+  border: 1px solid var(--eal-line-strong);
+  color: var(--eal-text);
+  min-height: 2.6rem;
+  padding: 0.55rem 0.8rem;
+}
+
+.viewerControls button:hover:not(:disabled) {
+  border-color: var(--eal-text);
+}
+
+.viewerControls button:disabled {
+  color: var(--eal-text-subtle);
+  cursor: not-allowed;
+}
+
+.viewerStatus {
+  color: var(--eal-text-muted);
+  font-size: 0.75rem;
+  margin: 0;
+}

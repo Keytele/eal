@@ -1,0 +1,99 @@
+.diagram {
+  border-block: 1px solid var(--eal-line);
+  display: grid;
+  gap: 1rem;
+  padding-block: 1.25rem;
+}
+
+.diagramHeader {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.diagramHeader h3 {
+  margin: 0;
+}
+
+.diagramHeader button,
+.stageList button {
+  background: transparent;
+  border: 1px solid var(--eal-line-strong);
+  color: var(--eal-text);
+  font: inherit;
+  min-height: 2.5rem;
+  padding: 0.55rem 0.8rem;
+}
+
+.diagramHeader button:hover,
+.stageList button:hover,
+.stageList button[aria-current='step'] {
+  border-color: var(--eal-text);
+}
+
+.diagramFallback {
+  color: var(--eal-text-muted);
+}
+
+.diagramInteractive {
+  display: grid;
+  gap: 1rem;
+}
+
+.stageList {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stageList button {
+  text-align: left;
+  width: 100%;
+}
+
+.progressTrack {
+  background: var(--eal-line);
+  height: 1px;
+  overflow: hidden;
+}
+
+.progressTrack span {
+  background: var(--eal-text);
+  display: block;
+  height: 100%;
+  transform-origin: left center;
+  width: 100%;
+}
+
+.stageDescription {
+  border-left: 1px solid var(--eal-line-strong);
+  color: var(--eal-text-muted);
+  min-height: 2.5rem;
+  padding-left: 0.9rem;
+}
+
+.visualFallback {
+  border: 1px solid var(--eal-line);
+  margin: 0;
+  padding: 1rem;
+}
+
+.visualFallback figcaption {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.visualFallback strong {
+  color: var(--eal-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.visualFallback p {
+  font-size: 0.82rem;
+  margin: 0;
+}
