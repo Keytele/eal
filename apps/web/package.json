@@ -20,7 +20,7 @@
     "@eal/ui": "workspace:*",
     "@eal/vehicle-data": "workspace:*",
     "@tailwindcss/postcss": "^4.1.0",
-    "motion": "^12.0.0",
+    "motion": "^13.4.1",
     "next": "^15.5.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
